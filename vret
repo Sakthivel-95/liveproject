@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VRET App - Virtual Reality Exposure Therapy</title>
+    <style>
+       
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #4CAF50, #008CBA); 
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            background-color: #222;
+            padding: 10px 20px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: block;
+        }
+        nav a:hover {
+            background-color: #4CAF50;
+        }
+        .nav-menu {
+            display: flex;
+            gap: 15px;
+        }
+        .nav-info {
+            display: flex;
+            gap: 15px;
+        }
+        .nav-info div {
+            position: relative;
+        }
+        .nav-info div:hover .info-item {
+            display: block;
+        }
+        .info-item {
+            display: none;
+            position: absolute;
+            background: white;
+            color: black;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            top: 100%;
+            left: 0;
+        }
+        .container {
+            padding: 20px;
+        }
+        .intro, .features, .download, .contact, .phobia-list {
+            margin-bottom: 40px;
+        }
+        h1, h2 {
+            color: #fff;
+        }
+        .download-btn, .web-btn, .register-btn {
+            display: inline-block;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .download-btn {
+            background-color: #4CAF50;
+        }
+        .web-btn {
+            background-color: #008CBA;
+            margin-left: 10px;
+        }
+        .register-btn {
+            background-color: #FF5722; 
+        }
+        .download-btn:hover {
+            background-color: #45a049;
+        }
+        .web-btn:hover {
+            background-color: #007BAA;
+        }
+        .register-btn:hover {
+            background-color: #E64A19;
+        }
+        .phobia-card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .phobia-card {
+            background: linear-gradient(135deg, #6DD5FA, #2980B9); 
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            padding: 20px;
+            width: 280px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .phobia-card:hover {
+            transform: scale(1.05);
+        }
+        .phobia-card img {
+            width: 100%;
+            height: auto;
+            max-width: 200px;
+            max-height: 200px;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border-radius: 50%; 
+            border: 3px solid white; 
+        }
+        .phobia-card h3 {
+            color: #fff;
+            margin-bottom: 15px;
+        }
+        .start-btn, .info-btn {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+        }
+        .start-btn:hover, .info-btn:hover {
+            background-color: #45a049;
+        }
+        .phobia-info {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.container > div');
+            sections.forEach(section => {
+                section.classList.add('hidden');
+            });
+            document.getElementById(sectionId).classList.remove('hidden');
+        }
+
+        function toggleInfo(id) {
+            const infoSection = document.getElementById(id);
+            infoSection.style.display = infoSection.style.display === "none" ? "block" : "none";
+        }
+        
+    </script>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to VRET App</h1>
+    <p>Your Personalized Virtual Reality Exposure Therapy</p>
+</header>
+
+<nav>
+    <div class="nav-menu">
+        <a href="#" onclick="showSection('main')">Home</a>
+        <a href="#" onclick="showSection('phobias')">Phobia List</a>
+    </div>
+    <div class="nav-info">
+        <div>Features
+            <div class="info-item">
+                <p>Customizable therapy sessions</p>
+                <p>Wide range of scenarios for different phobias</p>
+                <p>User-friendly interface</p>
+                <p>Progress tracking</p>
+                <p>24/7 access to therapy</p>
+            </div>
+        </div>
+        <div>Contact
+            <div class="info-item">
+                <p>Email: <a href="mailto:sakthivelrockfullife@gmail.com">sakthivelrockfullife@gmail.com</a></p>
+                <p>Also contact:sec22ad135@sairamtap.edu.in</p>
+            </div>
+        </div>
+        <a class="register-btn" href="https://forms.gle/FmwcG8o7DfeuRpqJ8" target="_blank">Register</a> 
+    </div>
+</nav>
+
+<div class="container">
+    
+    <div id="main">
+        <section class="intro">
+            <h2>What is VRET?</h2>
+            <p>The VRET App offers a new way to experience therapy from the comfort of your own home. Using virtual reality, it helps you gradually face and overcome your fears in a controlled environment.</p>
+        </section>
+
+        <section class="features">
+            <h2>Features</h2>
+            <ul>
+                <li>Customizable therapy sessions</li>
+                <li>Wide range of scenarios for different phobias</li>
+                <li>User-friendly interface</li>
+                <li>Progress tracking</li>
+                <li>24/7 access to therapy</li>
+            </ul>
+        </section>
+
+        <section class="download">
+            <h2>Download the App</h2>
+            <p>Ready to start your journey? Download the VRET App today and begin your personalized therapy sessions.</p>
+            <a class="download-btn" href="#">Download Now</a>
+            <a class="web-btn" href="#" onclick="showSection('phobias')">Use the Web to Open</a>
+        </section>
+
+        <section class="contact">
+            <h2>Contact Us</h2>
+            <p>Have questions? Reach out to us via email at <a href="mailto:sakthivelrockfullife@gmail.com">sakthivelrockfullife@gmail.com</a>.</p>
+        </section>
+    </div>
+
+    
+    <div id="phobias" class="hidden">
+        <section class="phobia-list">
+            <div class="phobia-card-container">
+                <div class="phobia-card">
+                    <img src="Aerophobia.jpg" alt="Aerophobia">
+                    <h3>Aerophobia</h3>
+                    <p>Conquer your fear of flying through immersive virtual experiences.</p>
+                    <a href="#" class="start-btn">Start Session</a>
+                    <button class="info-btn" onclick="toggleInfo('info-aerophobia')">More Info</button>
+                    <div id="info-aerophobia" class="phobia-info">
+                        <p><strong>Aerophobia</strong> is the fear of flying, which can cause significant anxiety during air travel. VR therapy provides realistic flight simulations, helping individuals become accustomed to flying and gradually reduce their fear.</p>
+                    </div>
+                </div>
+                <div class="phobia-card">
+                    <img src="Claustrophobia.jpg" alt="Claustrophobia">
+                    <h3>Claustrophobia</h3>
+                    <p>Gradually face your fear of confined spaces with virtual reality scenarios.</p>
+                    <a href="#" class="start-btn">Start Session</a>
+                    <button class="info-btn" onclick="toggleInfo('info-claustrophobia')">More Info</button>
+                    <div id="info-claustrophobia" class="phobia-info">
+                        <p><strong>Claustrophobia</strong> is the fear of confined spaces, often leading to feelings of panic. VR exposure therapy can help individuals face confined spaces in a controlled manner, allowing them to gradually build tolerance and reduce anxiety.</p>
+                    </div>
+                </div>
+                <div class="phobia-card">
+                    <img src="Glossophobia.jpg" alt="Glossophobia">
+                    <h3>Glossophobia</h3>
+                    <p>Overcome the fear of public speaking through realistic simulations.</p>
+                    <a href="#" class="start-btn">Start Session</a>
+                    <button class="info-btn" onclick="toggleInfo('info-glossophobia')">More Info</button>
+                    <div id="info-glossophobia" class="phobia-info">
+                        <p><strong>Glossophobia</strong>, or the fear of public speaking, is a common anxiety disorder. VR therapy allows individuals to practice speaking in front of virtual audiences, helping them build confidence and reduce anxiety over time.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 VRET App. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
